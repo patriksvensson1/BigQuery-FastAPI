@@ -1,5 +1,9 @@
 # Ignore PyCharm/IntelliJ specific files
 .idea/
+.venv/
 
 # Ignore macOS system files
 .DS_Store
+
+# Ignore tests cache
+tests/.pytest_cache
