@@ -13,18 +13,23 @@ async def root_method():
 
 @app.get('/prices')     # something.something/prices
 async def get_prices(parameters: PricesParameters = Depends()):
-    query = await (query_builder.prices_query(parameters))
-    query_result = await bigquery_client.execute_query(query)
+    try:
+        query, query_parameters = await (query_builder.prices_query(parameters))
+        query_result = await bigquery_client.execute_query(query, query_parameters)
 
-    prices = [dict(row) for row in query_result]
-    return prices
+        prices = [dict(row) for row in query_result]
+        return prices
+    except Exception as e:
+        return {'Error!': e}
 
 
 @app.get('/stocks')     # something.something/stocks
 async def get_stocks(parameters: StocksParameters = Depends()):
-    query = await (query_builder.stocks_query(parameters))
-    query_result = await bigquery_client.execute_query(query)
+    try:
+        query, query_parameters = await (query_builder.stocks_query(parameters))
+        query_result = await bigquery_client.execute_query(query, query_parameters)
 
-    prices = [dict(row) for row in query_result]
-    return prices
-
+        prices = [dict(row) for row in query_result]
+        return prices
+    except Exception as e:
+        return {'Error!': e}

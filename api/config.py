@@ -6,5 +6,5 @@ CREDENTIALS_PATH = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
 CREDENTIALS = service_account.Credentials.from_service_account_file(CREDENTIALS_PATH)
 
 # BigQuery variables:
-BQ_DATASET = 'dataset_here'
-BQ_TABLE = 'table_here'
+BQ_DATASET = 'stock_data'
+BQ_TABLE = 'prices'

@@ -4,7 +4,9 @@ from datetime import date, time
 
 
 class PricesParameters(BaseModel):  # url/something?parameters
+    name: Optional[str] = None
     ticker: Optional[str] = None
+    currency: Optional[str] = None
     at_date: Optional[date] = None
     from_date: Optional[date] = None
     to_date: Optional[date] = None

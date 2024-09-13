@@ -7,3 +7,6 @@
 
 # Ignore tests cache
 tests/.pytest_cache
+
+# Ignore file for tests
+tests/test_variables.env
