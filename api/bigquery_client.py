@@ -1,7 +1,7 @@
 from fastapi import HTTPException
 from google.cloud import bigquery
 from google.api_core.exceptions import BadRequest
-import api.config as config
+import config.config as config
 
 
 client = bigquery.Client(credentials=config.CREDENTIALS)

@@ -1,6 +1,6 @@
 from api.url_parameters import StocksParameters, PricesParameters
 from google.cloud import bigquery
-import api.config as config
+import config.config as config
 
 
 async def prices_query(parameters: PricesParameters):
